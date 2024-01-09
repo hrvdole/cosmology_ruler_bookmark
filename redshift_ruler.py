@@ -3,7 +3,10 @@
 # by Hervé Dole, Université Paris-Saclay
 # 20240102 
 #
-# See publication in arXiv: (soon)
+# See publication in arXiv:2401.03929
+# http://arxiv.org/abs/2401.03929
+#
+# Please cite Dole (2024) arXiv:2401.03929 if you like or use this bookmark
 #
 # Creates a (vertical) 2-sided bookmark with 5 axes :
 # redshift z
@@ -176,7 +179,7 @@ plt.figtext(0.5, .895, textzrange, fontsize=9, ha='center')
 # Bottom text
 bottom_text = "H. Dole - Université Paris-Saclay - 2024"
 plt.figtext(0.5, .0098, bottom_text, fontsize=7., ha='center')
-bottom_text2 = "arXiv:2401.nnnnn"
+bottom_text2 = "arXiv:2401.03929"
 plt.figtext(0.5, .003, bottom_text2, fontsize=7., ha='center')
 
 # dpi quality; 300 recommended
