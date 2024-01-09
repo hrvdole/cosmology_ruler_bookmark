@@ -30,7 +30,7 @@ import astropy.units as u
 import astropy.constants as cst
 
 # Choose rest frequency of reference line
-lambda_ref = 0.21  # meters
+lambda_ref = 0.21106  # meters
 nu_ref = cst.c.si.value / lambda_ref  # Hz
 
 #--------------------------------------------
@@ -94,7 +94,7 @@ plt.rcParams['text.usetex'] = True
 plt.rcParams['axes.autolimit_mode'] = 'round_numbers'
 
 fig = plt.figure(figsize=(2, 10))
-fig.subplots_adjust(bottom=0.025, top=0.88, left=0.05, right=0.95)
+fig.subplots_adjust(bottom=0.04, top=0.9, left=0.05, right=0.95)
 
 # left axis: z
 ax1 = setup_axes(fig, 141)
@@ -132,10 +132,12 @@ plt.figtext(0.75, .5, label_axis4 , fontsize=9, ha='center', va='center', rotati
 title_us1 = "{\\bf Cosmology Ruler Bookmark}"
 title_fr1 = "{\\bf Marque-page cosmologique}"
 
-params1 = fr"$\Omega_{{m}} = {cosmo.Om0:.3f}, \Omega_{{\Lambda}} = {cosmo.Ode0:.3f} $"      
-params2 = rf"$H_{{0}} = {cosmo.H0.value}, \mathrm{{km}}/\mathrm{{s}}/\mathrm{{Mpc}} $"
+# params1 = fr"$\Omega_{{m}} = {cosmo.Om0:.3f}, \Omega_{{\Lambda}} = {cosmo.Ode0:.3f} $"      
+# params2 = rf"$H_{{0}} = {cosmo.H0.value}, \mathrm{{km}}/\mathrm{{s}}/\mathrm{{Mpc}} $"
+params1 = fr"$\nu_{{\mathrm{{ref}}}} = {nu_ref/1e6:.2f}\,\mathrm{{MHz}}$"      
+params2 = rf"$\lambda_{{\mathrm{{ref}}}} = {lambda_ref*1e2:.2f}\,\mathrm{{cm}}$"
 
-ref1 = "(Planck Collab., 2020, A\\&A, 641, A1) "
+#ref1 = "(Planck Collab., 2020, A\\&A, 641, A1) "
 
 # legend1 = "Age and time in Gyr. Angle "
 # legend2 = "(for 1 kpc proper) in arcsec."
@@ -148,7 +150,7 @@ plt.figtext(0.5, .965, title_fr1 , fontsize=9, ha='center')
 plt.figtext(0.5, .94, params1, fontsize=9, ha='center')
 plt.figtext(0.5, .925, params2, fontsize=9, ha='center')
 
-plt.figtext(0.5, .91, ref1, fontsize=6.5, ha='center')
+# plt.figtext(0.5, .91, ref1, fontsize=6.5, ha='center')
 
 # plt.figtext(0.5, .925, legend1, fontsize=9, ha='center')
 # plt.figtext(0.5, .915, legend2, fontsize=9, ha='center')
@@ -157,9 +159,9 @@ plt.figtext(0.5, .91, ref1, fontsize=6.5, ha='center')
 
 # Bottom text
 bottom_text = r"H. Dole \& A. Gorce"
-plt.figtext(0.5, .0098, bottom_text, fontsize=7., ha='center')
+plt.figtext(0.5, .015, bottom_text, fontsize=7., ha='center')
 bottom_text2 = "Université Paris-Saclay (2024)"
-plt.figtext(0.5, .003, bottom_text2, fontsize=7., ha='center')
+plt.figtext(0.5, .006, bottom_text2, fontsize=7., ha='center')
 
 # dpi quality; 300 recommended
 dpi = 300
